@@ -10,6 +10,9 @@ app.use(express.json())
 
 app.use("/text", Route.text)
 app.use("/locker", Route.Auth)
+app.use("/photo", Route.photo)
+
+
 mg.connect(process.env.Mongo_Uri).then(() => {
     app.listen(port, () => {
         console.log(`server is running & Mongodb is Connected on ${port}`)

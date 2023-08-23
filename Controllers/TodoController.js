@@ -1,8 +1,8 @@
 const ModelTodo = require("../Models/TodoModels")
 
-module.exports.GetAllLocker = async (req, res) => {
+module.exports.GetAllText = async (req, res) => {
     const { email } = req.body
-
+      
     if (email == "") {
         return res.send([{
             id: 405,
@@ -19,7 +19,7 @@ module.exports.GetAllLocker = async (req, res) => {
 
 }
 
-module.exports.SaveLocker = async (req, res) => {
+module.exports.SaveText = async (req, res) => {
     const { text, email } = req.body
     if (email == "") {
         return res.send([{
@@ -42,7 +42,7 @@ module.exports.SaveLocker = async (req, res) => {
     return res.send(TextArr)
 
 }
-module.exports.updateLocker = async (req, res) => {
+module.exports.updateText = async (req, res) => {
 
     const { id, email } = req.body
 
@@ -60,7 +60,7 @@ module.exports.updateLocker = async (req, res) => {
             currentText = i.text
         }
     }
-    
+
     const newAllTodo = Alltodo.filter((item) => item.id != id)
 
     await ModelTodo.findByIdAndUpdate(objId, { text: newAllTodo })
@@ -70,7 +70,7 @@ module.exports.updateLocker = async (req, res) => {
 
 }
 
-module.exports.deleteLocker = async (req, res) => {
+module.exports.deleteText = async (req, res) => {
 
     const { id, email } = req.body
 
