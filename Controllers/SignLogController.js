@@ -28,7 +28,7 @@ module.exports.Signup = async (req, res) => {
             name, email
             , password: hashpass,
             text: [],
-            document: []
+            document: [[]]
 
         })
 
