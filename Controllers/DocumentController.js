@@ -9,7 +9,7 @@ module.exports.SaveDocument = async (req, res) => {
     const docArr = AllDetail.document
     const documentArr = [...docArr, ...tableData]
 
-    const AllArr = await ModelTodo.findOneAndUpdate(email, { document: documentArr })
+    const AllArr = await ModelTodo.findByIdAndUpdate(AllDetail._id, { document: documentArr })
 
     return res.send(documentArr)
 
