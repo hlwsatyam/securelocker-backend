@@ -11,6 +11,7 @@ app.use(express.json())
 app.use("/text", Route.text)
 app.use("/locker", Route.Auth)
 app.use("/photo", Route.photo)
+app.use("/document", Route.document)
 
 
 mg.connect(process.env.Mongo_Uri).then(() => {

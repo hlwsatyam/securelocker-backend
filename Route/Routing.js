@@ -2,11 +2,12 @@ const exp = require('express')
 const { GetAllText, SaveText, updateText, deleteText } = require('../Controllers/TodoController')
 const { Login, Signup } = require('../Controllers/SignLogController')
 const { SavePhoto } = require('../Controllers/PhotoController')
+const { SaveDocument } = require('../Controllers/DocumentController')
 
 const text = exp.Router()
 const Auth = exp.Router()
 const photo = exp.Router()
-
+const document = exp.Router()
 
 
 Auth.post("/login", Login)
@@ -25,4 +26,12 @@ photo.post("/Photosave", SavePhoto)
 // photo.post("/delete", deleteLocker)
 
 
-module.exports = { text, Auth, photo }
+// photo.post("/", GetAllLocker)
+document.post("/Documentsave", SaveDocument)
+// photo.put("/update", updateLocker)
+// photo.post("/delete", deleteLocker)
+
+
+
+
+module.exports = { text, Auth, photo, document }

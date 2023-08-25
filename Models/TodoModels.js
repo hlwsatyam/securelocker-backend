@@ -12,7 +12,8 @@ const TodoSchema = new mg.Schema({
         required: true
     }
     ,
-    text: []
+    text: [],
+    document: []
 
 })
 

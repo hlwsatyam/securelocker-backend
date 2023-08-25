@@ -7,7 +7,7 @@ module.exports.Login = async (req, res) => {
         return res.send('Register Please')
     } else {
         const PassIsCorrect = bcrypt.compareSync(password, Existence.password)
-        
+
         if (PassIsCorrect) {
             return res.send('Success')
         } else {
@@ -27,7 +27,9 @@ module.exports.Signup = async (req, res) => {
         const user = new ModelTodo({
             name, email
             , password: hashpass,
-            text: []
+            text: [],
+            document: []
+
         })
 
         try {
