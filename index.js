@@ -18,6 +18,7 @@ mg.connect(process.env.Mongo_Uri).then(() => {
     app.listen(port, () => {
         console.log(`server is running & Mongodb is Connected on ${port}`)
     })
+    
 }).catch(() => {
     console.log(` Mongodb is Not Connected😴🥱😴🥱 `)
 }
