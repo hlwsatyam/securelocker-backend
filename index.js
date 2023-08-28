@@ -14,11 +14,11 @@ app.use("/photo", Route.photo)
 app.use("/document", Route.document)
 
 
-mg.connect(process.env.Mongo_Uri).then(() => {
+mg.connect("mongodb+srv://admin:20172522@satyam.hqkzy0x.mongodb.net/?retryWrites=true&w=majority").then(() => {
     app.listen(port, () => {
         console.log(`server is running & Mongodb is Connected on ${port}`)
     })
-    
+
 }).catch(() => {
     console.log(` Mongodb is Not Connected😴🥱😴🥱 `)
 }
